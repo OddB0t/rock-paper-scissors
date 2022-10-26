@@ -92,7 +92,9 @@ l2 = Label(frame,
 		text = "VS			 ",
 		font = "normal 10 bold")
 
-l3 = Label(frame, text = "Computer", font = 15)
+l3 = Label(frame, 
+		text = "Computer", 
+		font = 15)
 
 l1.pack(side = LEFT)
 l2.pack(side = LEFT)
@@ -130,5 +132,4 @@ Button(root, text = "Reset Game",
 	font = 10, fg = "red",
 	bg = "black", command = reset_game).pack(pady = 20)
 
-# Execute Tkinter
 root.mainloop()
