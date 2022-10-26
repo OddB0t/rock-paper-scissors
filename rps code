@@ -11,8 +11,8 @@ root.geometry("300x300")
 # Establish title
 root.title("Rock Paper Scissor Game")
 
-# Computer Value
-computer_value = {
+# Establish PC value shortcuts
+computer_no = {
 	"0":"Rock",
 	"1":"Paper",
 	"2":"Scissor"
@@ -35,7 +35,7 @@ def button_disable():
 
 # Player chose rock
 def chosenrock():
-	c_v = computer_value[str(random.randint(0,2))]
+	c_v = computer_no[str(random.randint(0,2))]
 	if c_v == "Rock":
 		match_result = "Draw"
 	elif c_v=="Scissor":
@@ -49,7 +49,7 @@ def chosenrock():
 
 # Player chose paper
 def chosenpaper():
-	c_v = computer_value[str(random.randint(0, 2))]
+	c_v = computer_no[str(random.randint(0, 2))]
 	if c_v == "Paper":
 		match_result = "Draw"
 	elif c_v=="Scissor":
@@ -63,7 +63,7 @@ def chosenpaper():
 
 # Player chose scissor
 def chosenscissor():
-	c_v = computer_value[str(random.randint(0,2))]
+	c_v = computer_no[str(random.randint(0,2))]
 	if c_v == "Rock":
 		match_result = "Computer Win"
 	elif c_v == "Scissor":
