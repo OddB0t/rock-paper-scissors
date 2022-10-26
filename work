@@ -5,10 +5,10 @@ import random
 # Create Object
 root = Tk()
 
-# Set geometry
+# Establish geometry
 root.geometry("300x300")
 
-# Set title
+# Establish title
 root.title("Rock Paper Scissor Game")
 
 # Computer Value
@@ -18,7 +18,7 @@ computer_value = {
 	"2":"Scissor"
 }
 
-# Reset The Game
+# Play the game again
 def reset_game():
 	b1["state"] = "active"
 	b2["state"] = "active"
@@ -27,17 +27,17 @@ def reset_game():
 	l3.config(text = "Computer")
 	l4.config(text = "")
 
-# Disable the Button
+# Turn off the button
 def button_disable():
 	b1["state"] = "disable"
 	b2["state"] = "disable"
 	b3["state"] = "disable"
 
-# If player selected rock
-def isrock():
+# Player chose rock
+def chosenrock():
 	c_v = computer_value[str(random.randint(0,2))]
 	if c_v == "Rock":
-		match_result = "Match Draw"
+		match_result = "Draw"
 	elif c_v=="Scissor":
 		match_result = "Player Win"
 	else:
@@ -47,11 +47,11 @@ def isrock():
 	l3.config(text = c_v)
 	button_disable()
 
-# If player selected paper
-def ispaper():
+# Player chose paper
+def chosenpaper():
 	c_v = computer_value[str(random.randint(0, 2))]
 	if c_v == "Paper":
-		match_result = "Match Draw"
+		match_result = "Draw"
 	elif c_v=="Scissor":
 		match_result = "Computer Win"
 	else:
@@ -61,13 +61,13 @@ def ispaper():
 	l3.config(text = c_v)
 	button_disable()
 
-# If player selected scissor
-def isscissor():
+# Player chose scissor
+def chosenscissor():
 	c_v = computer_value[str(random.randint(0,2))]
 	if c_v == "Rock":
 		match_result = "Computer Win"
 	elif c_v == "Scissor":
-		match_result = "Match Draw"
+		match_result = "Draw"
 	else:
 		match_result = "Player Win"
 	l4.config(text = match_result)
@@ -75,7 +75,7 @@ def isscissor():
 	l3.config(text = c_v)
 	button_disable()
 
-# Add Labels, Frames and Button
+# Build the interface
 Label(root,
 	text = "Rock Paper Scissor",
 	font = "normal 20 bold",
@@ -86,13 +86,13 @@ frame.pack()
 
 l1 = Label(frame,
 		text = "Player			 ",
-		font = 10)
+		font = 15)
 
 l2 = Label(frame,
 		text = "VS			 ",
 		font = "normal 10 bold")
 
-l3 = Label(frame, text = "Computer", font = 10)
+l3 = Label(frame, text = "Computer", font = 15)
 
 l1.pack(side = LEFT)
 l2.pack(side = LEFT)
@@ -112,15 +112,15 @@ frame1.pack()
 
 b1 = Button(frame1, text = "Rock",
 			font = 10, width = 7,
-			command = isrock)
+			command = chosenrock)
 
 b2 = Button(frame1, text = "Paper ",
 			font = 10, width = 7,
-			command = ispaper)
+			command = chosenpaper)
 
 b3 = Button(frame1, text = "Scissor",
 			font = 10, width = 7,
-			command = isscissor)
+			command = chosenscissor)
 
 b1.pack(side = LEFT, padx = 10)
 b2.pack(side = LEFT,padx = 10)
